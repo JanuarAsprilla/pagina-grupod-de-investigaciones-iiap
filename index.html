@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos de Investigación | IIAP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', serif;
+            background: #000;
+            color: white;
+            overflow-x: hidden;
+            scroll-snap-type: y mandatory;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-snap-type: y mandatory;
+        }
+
+        /* HERO WITH PARTICLES */
+        .hero-3d {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            perspective: 1000px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0B3D2C, #0C3547);
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .hero-3d::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(38, 166, 91, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(243, 156, 18, 0.2) 0%, transparent 50%);
+            animation: rotate3d 20s linear infinite;
+        }
+
+        @keyframes rotate3d {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .hero-particles {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0C3547, #0B3D2C);
+            overflow: hidden;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #F39C12;
+            border-radius: 50%;
+            animation: float-particle 20s linear infinite;
+        }
+
+        @keyframes float-particle {
+            0% { transform: translateY(0) translateX(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) translateX(100px); opacity: 0; }
+        }
+
+        .hero-content-3d {
+            text-align: center;
+            z-index: 10;
+            transform-style: preserve-3d;
+            animation: float3d 6s ease-in-out infinite;
+        }
+
+        @keyframes float3d {
+            0%, 100% { transform: translateZ(0) translateY(0); }
+            50% { transform: translateZ(50px) translateY(-20px); }
+        }
+
+        .hero-content-particles {
+            text-align: center;
+            z-index: 10;
+            max-width: 1200px;
+            padding: 2rem;
+        }
+
+        .hero-title-3d {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            letter-spacing: 10px;
+            background: linear-gradient(45deg, #26A65B, #F39C12, #26A65B);
+            background-size: 200% 200%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease infinite;
+            text-shadow: 0 0 80px rgba(38, 166, 91, 0.5);
+            margin-bottom: 2rem;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .hero-title-particles {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            letter-spacing: 10px;
+            background: linear-gradient(90deg, #26A65B, #F39C12, #26A65B);
+            background-size: 200% auto;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            margin-bottom: 2rem;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .hero-subtitle-3d {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .hero-subtitle-particles {
+            font-size: 2.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            letter-spacing: 2px;
+            line-height: 1.5;
+        }
+
+        /* =====================================================
+   SECCIÓN DIAGRAMA PICIA
+   ===================================================== */
+        .picia-diagram-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 2rem;
+            background: linear-gradient(180deg, #0A3829 0%, #0B3D2C 50%, #000 100%);
+            position: relative;
+            overflow: hidden;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .picia-diagram-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(243,156,18,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(38,166,91,0.06) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .picia-container {
+            max-width: 1400px;
+            width: 100%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .picia-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .picia-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #F39C12, #D4790D);
+            color: #0B3D2C;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.6rem 1.8rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(243,156,18,0.4);
+        }
+
+        .picia-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: #FFFFFF;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+        }
+
+        .picia-subtitle {
+            font-size: 1.4rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .picia-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 3rem 0;
+        }
+
+        .picia-glow {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(ellipse, rgba(243,156,18,0.15) 0%, rgba(38,166,91,0.1) 40%, transparent 70%);
+            filter: blur(60px);
+            animation: picia-pulse 4s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes picia-pulse {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+
+        .picia-image {
+            position: relative;
+            z-index: 2;
+            max-width: 100%;
+            width: auto;
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 16px;
+            box-shadow: 
+                0 25px 80px rgba(0,0,0,0.6),
+                0 0 60px rgba(243,156,18,0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .picia-image:hover {
+            transform: scale(1.02);
+        }
+
+        .picia-footer {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .picia-stat {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(243,156,18,0.2);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .picia-stat:hover {
+            background: rgba(243,156,18,0.1);
+            border-color: rgba(243,156,18,0.5);
+            transform: translateY(-5px);
+        }
+
+        .picia-stat-number {
+            display: block;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: #F39C12;
+            line-height: 1;
+            text-shadow: 0 0 30px rgba(243,156,18,0.5);
+        }
+
+        .picia-stat-label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .picia-title { font-size: 2.5rem; }
+            .picia-subtitle { font-size: 1.1rem; }
+            .picia-footer { gap: 1.5rem; }
+            .picia-stat { padding: 1rem 1.5rem; }
+            .picia-stat-number { font-size: 2.5rem; }
+        }
+
+        /* SCROLL INDICATOR 3D */
+        .scroll-3d {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 50px;
+            border: 2px solid #F39C12;
+            border-radius: 25px;
+            cursor: pointer;
+            animation: bounce3d 2s infinite;
+        }
+
+        .scroll-3d::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 6px;
+            height: 12px;
+            background: #F39C12;
+            border-radius: 3px;
+            animation: scrollDot 2s infinite;
+        }
+
+        @keyframes scrollDot {
+            0% { top: 10px; opacity: 1; }
+            100% { top: 30px; opacity: 0; }
+        }
+
+        @keyframes bounce3d {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* FLOATING CARDS GRID */
+        .groups-section {
+            min-height: 100vh;
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, #0B3D2C, #000);
+            position: relative;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .groups-header {
+            text-align: center;
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+
+        .groups-header.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .groups-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            letter-spacing: 5px;
+            color: #F39C12;
+            margin-bottom: 1.5rem;
+        }
+
+        .groups-subtitle {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 3D FLIP CARDS */
+        .groups-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            perspective: 1000px;
+        }
+
+        /* Sección compacta: usar 2 columnas x 2 filas sólo para la sección duplicada */
+        .groups-section.groups-section-compact .groups-grid {
+            max-width: 1100px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .flip-card {
+            height: 400px;
+            perspective: 1000px;
+            opacity: 0;
+            transform: translateY(100px) scale(0.9);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .flip-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform-style: preserve-3d;
+            background: linear-gradient(135deg, #1A5D3F, #0C3547);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            overflow: visible;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+            box-shadow: 0 20px 60px rgba(243, 156, 18, 0.4);
+            border-color: #F39C12;
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flip-card-front {
+            background: linear-gradient(135deg, #1A5D3F, #0C3547);
+            border: 2px solid rgba(243, 156, 18, 0.3);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .flip-card-back {
+            background: linear-gradient(135deg, #0C3547, #1A5D3F);
+            border: 2px solid #F39C12;
+            transform: rotateY(180deg);
+            background-size: cover;
+            background-position: center;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="g" x1="0" y1="0" x2="100" y2="100"><stop offset="0%25" style="stop-color:rgba(26,93,63,0.9)"/><stop offset="100%25" style="stop-color:rgba(12,53,71,0.9)"/></linearGradient></defs><rect width="1200" height="800" fill="url(%23g)"/><path d="M200 600 Q300 400 400 600 L400 800 L200 800" fill="%23095A3E" opacity="0.8"/><path d="M500 650 Q600 350 700 650 L700 800 L500 800" fill="%230B7D40" opacity="0.7"/><path d="M100 700 Q150 500 250 700 L250 800 L100 800" fill="%236BA650" opacity="0.6"/></svg>');
+            overflow: visible;
+        }
+
+        .flip-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px;
+        }
+
+        .flip-card-front-emoji {
+            font-size: 8rem;
+            opacity: 0.3;
+            position: absolute;
+        }
+
+        .flip-card-front-title {
+            position: absolute;
+            top: 2rem;
+            left: 1.5rem;
+            right: 1.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            color: white;
+            text-align: center;
+            letter-spacing: 2px;
+            font-weight: 700;
+            line-height: 1.2;
+            z-index: 10;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+            pointer-events: none;
+        }
+
+        .flip-card-back-title {
+            margin-bottom: 1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.6rem;
+            color: #F39C12;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .flip-card-back-description {
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.9);
+            text-align: center;
+        }
+
+        .flip-card-front-title {
+            position: absolute;
+            font-size: 1.5rem;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .flip-card-back-title {
+            margin-bottom: 2rem;
+        }
+
+        .flip-card-back-description {
+            margin-bottom: 2rem;
+        }
+
+        .flip-card-front-transparent {
+            background: transparent !important;
+            border: 2px solid rgba(243, 156, 18, 0.3) !important;
+        }
+
+        .flip-card-back-sendero {
+            background-image: linear-gradient(135deg, rgba(26,93,63,0.85), rgba(12,53,71,0.85)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%22100%22 y2=%22100%22><stop offset=%220%25%22 style=%22stop-color:rgb(9,90,62)%22/><stop offset=%22100%25%22 style=%22stop-color:rgb(11,125,64)%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/><path d=%22M200 600 Q300 400 400 600 L400 800 L200 800%22 fill=%22%23095A3E%22/><path d=%22M500 650 Q600 350 700 650 L700 800 L500 800%22 fill=%22%230B7D40%22/><path d=%22M100 700 Q150 500 250 700 L250 800 L100 800%22 fill=%22%236BA650%22/><circle cx=%22600%22 cy=%22200%22 r=%2250%22 fill=%22rgba(243,156,18,0.3)%22/></svg>') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        /* Card 1 Styles - Frente limpio */
+        .flip-card:nth-child(1) .flip-card-front {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.7), rgba(10, 63, 51, 0.7)), url('assets/YDRAY-IMG_1099.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            border: 3px solid #D4A574 !important;
+        }
+
+        .flip-card:nth-child(1) .flip-card-front-emoji {
+            display: none;
+        }
+
+        .flip-card:nth-child(1) .flip-card-back {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.9), rgba(10, 63, 51, 0.9)), url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 800%22><defs><linearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%22100%22 y2=%22100%22><stop offset=%220%25%22 style=%22stop-color:rgb(9,90,62)%22/><stop offset=%22100%25%22 style=%22stop-color:rgb(11,125,64)%22/></linearGradient></defs><rect width=%221200%22 height=%22800%22 fill=%22url(%23g)%22/><path d=%22M200 600 Q300 400 400 600 L400 800 L200 800%22 fill=%22%23095A3E%22 opacity=%220.6%22/><path d=%22M500 650 Q600 350 700 650 L700 800 L500 800%22 fill=%22%230B7D40%22 opacity=%220.5%22/><path d=%22M100 700 Q150 500 250 700 L250 800 L100 800%22 fill=%22%236BA650%22 opacity=%220.4%22/></svg>') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+        }
+
+        /* Card 2 - Ambiental */
+        .flip-card:nth-child(2) .flip-card-front {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.7), rgba(10, 63, 51, 0.7)), url('assets/VIVERO.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            border: 3px solid #D4A574 !important;
+        }
+        .flip-card:nth-child(2) .flip-card-front-emoji { display: none; }
+        .flip-card:nth-child(2) .flip-card-back {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.9), rgba(10, 63, 51, 0.9)), url('assets/VIVERO.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        /* Card 3 - Productivo */
+        .flip-card:nth-child(3) .flip-card-front {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.7), rgba(10, 63, 51, 0.7)), url('assets/PISCITANQUES.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            border: 3px solid #D4A574 !important;
+        }
+        .flip-card:nth-child(3) .flip-card-front-emoji { display: none; }
+        .flip-card:nth-child(3) .flip-card-back {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.9), rgba(10, 63, 51, 0.9)), url('assets/PISCITANQUES.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        /* Card 4 - Ecosistemico */
+        .flip-card:nth-child(4) .flip-card-front {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.7), rgba(10, 63, 51, 0.7)), url('assets/SENDERO.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            border: 3px solid #D4A574 !important;
+        }
+        .flip-card:nth-child(4) .flip-card-front-emoji { display: none; }
+        .flip-card:nth-child(4) .flip-card-back {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.9), rgba(10, 63, 51, 0.9)), url('assets/SENDERO.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        /* Card 5 - Laboratorio de Datos */
+        .flip-card:nth-child(5) .flip-card-front {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.7), rgba(10, 63, 51, 0.7)), url('assets/ESPACIOS_CENTRO.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+            border: 3px solid #D4A574 !important;
+        }
+        .flip-card:nth-child(5) .flip-card-front-emoji { display: none; }
+        .flip-card:nth-child(5) .flip-card-back {
+            background: linear-gradient(135deg, rgba(11, 74, 60, 0.9), rgba(10, 63, 51, 0.9)), url('assets/ESPACIOS_CENTRO.jpeg') !important;
+            background-size: cover !important;
+            background-position: center !important;
+        }
+
+        .group-icon {
+            width: 100px;
+            height: 100px;
+            background: #F39C12;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(243, 156, 18, 0.4);
+            animation: pulse-icon 2s ease-in-out infinite;
+            position: relative;
+            z-index: 5;
+            transform: translateZ(50px);
+            flex-shrink: 0;
+        }
+
+        @keyframes pulse-icon {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .group-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 5;
+            line-height: 1.2;
+        }
+
+        .group-description {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            position: relative;
+            z-index: 5;
+        }
+
+        .group-details {
+            list-style: none;
+            text-align: left;
+            width: 100%;
+            position: relative;
+            z-index: 5;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .group-details li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.9rem;
+        }
+
+        .group-details li:last-child {
+            border-bottom: none;
+        }
+
+        .group-details li strong {
+            color: #F39C12;
+            font-weight: 600;
+        }
+
+        /* BOTÓN VER MÁS */
+        .card-actions {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .expand-btn {
+            background: linear-gradient(135deg, #F39C12, #D4790D);
+            color: #0B3D2C;
+            border: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 25px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+
+        .expand-btn:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+        }
+
+        /* INTERACTIVE TIMELINE */
+        .timeline-interactive {
+            min-height: 100vh;
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, #000, #0B3D2C);
+            position: relative;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .timeline-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: #F39C12;
+            letter-spacing: 5px;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-subtitle {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .timeline-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline-line-vertical {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, #26A65B, #F39C12);
+            transform: translateX(-50%);
+        }
+
+        .timeline-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(80px);
+            transition: all 1s ease;
+            position: relative;
+        }
+
+        .timeline-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* IMPARES (1, 3, 5) - Tarjeta a la IZQUIERDA */
+        .timeline-step:nth-child(odd) {
+            flex-direction: row;
+            padding-right: calc(50% + 40px);
+        }
+
+        .timeline-step:nth-child(odd) .timeline-content-box {
+            text-align: right;
+        }
+
+        .timeline-step:nth-child(odd) .timeline-badge {
+            right: calc(50% - 30px);
+            left: auto;
+        }
+
+        /* PARES (2, 4) - Tarjeta a la DERECHA */
+        .timeline-step:nth-child(even) {
+            flex-direction: row-reverse;
+            padding-left: calc(50% + 40px);
+        }
+
+        .timeline-step:nth-child(even) .timeline-content-box {
+            text-align: left;
+        }
+
+        .timeline-step:nth-child(even) .timeline-badge {
+            left: calc(50% - 30px);
+            right: auto;
+        }
+
+        .timeline-content-box {
+            background: linear-gradient(135deg, #1A5D3F, #0C3547);
+            padding: 2.5rem;
+            border-radius: 20px;
+            position: relative;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(243, 156, 18, 0.3);
+            flex: 1;
+        }
+
+        .timeline-content-box:hover {
+            transform: scale(1.03);
+            border-color: #F39C12;
+            box-shadow: 0 20px 60px rgba(243, 156, 18, 0.3);
+        }
+
+        .timeline-badge {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: #F39C12;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 0 0 8px #000, 0 0 20px rgba(243,156,18,0.5);
+            z-index: 10;
+        }
+
+        .step-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            color: #F39C12;
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+
+        .step-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+
+        .step-description {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-step:nth-child(odd),
+            .timeline-step:nth-child(even) {
+                flex-direction: column;
+                padding: 0 0 0 50px;
+            }
+            
+            .timeline-line-vertical {
+                left: 20px;
+            }
+            
+            .timeline-step:nth-child(odd) .timeline-badge,
+            .timeline-step:nth-child(even) .timeline-badge {
+                left: -10px;
+                right: auto;
+            }
+            
+            .timeline-step:nth-child(odd) .timeline-content-box,
+            .timeline-step:nth-child(even) .timeline-content-box {
+                text-align: left;
+            }
+        }
+
+        /* PARALLAX SECTION WITH 3D EFFECT */
+        .parallax-research {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0B3D2C, #0C3547);
+            overflow: hidden;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .parallax-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .floating-shape {
+            position: absolute;
+            background: rgba(243, 156, 18, 0.1);
+            border-radius: 50%;
+            animation: float-shape 15s ease-in-out infinite;
+        }
+
+        .floating-shape:nth-child(1) {
+            width: 300px;
+            height: 300px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-shape:nth-child(2) {
+            width: 200px;
+            height: 200px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-shape:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float-shape {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -50px) scale(1.1); }
+            66% { transform: translate(-30px, 30px) scale(0.9); }
+        }
+
+        .parallax-research-content {
+            text-align: center;
+            z-index: 10;
+            max-width: 1000px;
+            padding: 3rem;
+        }
+
+        .parallax-stat {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 12rem;
+            color: #F39C12;
+            line-height: 1;
+            margin-bottom: 2rem;
+            text-shadow: 0 0 80px rgba(243, 156, 18, 0.8);
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 1s ease;
+        }
+
+        .parallax-stat.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .parallax-stat-text {
+            font-size: 2rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.9);
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease 0.3s;
+        }
+
+        .parallax-stat-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* CTA SECTION */
+        .cta-research {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0C3547, #0B3D2C);
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+            scroll-snap-align: start;
+            scroll-snap-stop: always;
+        }
+
+        .cta-research::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 30% 70%, rgba(38, 166, 91, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(243, 156, 18, 0.2) 0%, transparent 50%);
+            animation: rotate-bg 20s linear infinite;
+        }
+
+        @keyframes rotate-bg {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .cta-research-content {
+            text-align: center;
+            max-width: 1000px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-research-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem;
+            color: white;
+            margin-bottom: 2rem;
+            letter-spacing: 5px;
+            line-height: 1.1;
+            text-shadow: 0 0 40px rgba(38, 166, 91, 0.5);
+        }
+
+        .cta-research-text {
+            font-size: 1.6rem;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 4rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 1.8rem 4rem;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-btn-primary {
+            background: linear-gradient(45deg, #F39C12, #26A65B);
+            color: #0B3D2C;
+            box-shadow: 0 10px 40px rgba(243, 156, 18, 0.5);
+        }
+
+        .cta-btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid #F39C12;
+            box-shadow: 0 10px 40px rgba(243, 156, 18, 0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+
+        .cta-btn-primary:hover {
+            box-shadow: 0 20px 60px rgba(243, 156, 18, 0.7);
+        }
+
+        .cta-btn-secondary:hover {
+            background: rgba(243, 156, 18, 0.1);
+            box-shadow: 0 20px 60px rgba(243, 156, 18, 0.4);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-title-3d,
+            .hero-title-particles { 
+                font-size: 4rem; 
+            }
+            
+            .groups-title,
+            .timeline-title,
+            .cta-research-title { 
+                font-size: 3rem; 
+            }
+            
+            .groups-grid { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .timeline-step { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .timeline-line-vertical { 
+                display: none; 
+            }
+            
+            .parallax-stat { 
+                font-size: 6rem; 
+            }
+            
+            .cta-buttons { 
+                flex-direction: column; 
+            }
+            
+            .cta-btn {
+                width: 100%;
+            }
+        }
+
+        /* Opening hero (apertura) */
+        .opening-hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4rem 2rem;
+            background: #0A3829;
+            background-image: radial-gradient(ellipse at 20% 10%, rgba(38,166,91,0.06), transparent 8%),
+                              radial-gradient(ellipse at 80% 80%, rgba(243,156,18,0.04), transparent 12%);
+            background-blend-mode: overlay;
+            color: #fff;
+            position: relative;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .opening-hero::before {
+            content: '';
+            position: absolute;
+            inset: -10% -5% -10% -5%;
+            background: radial-gradient(circle at 25% 20%, rgba(243,156,18,0.12), transparent 12%),
+                        radial-gradient(circle at 80% 80%, rgba(38,166,91,0.06), transparent 18%);
+            transform: rotate(6deg);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .opening-hero .hero-inner {
+            position: relative;
+            z-index: 5;
+            max-width: 1100px;
+        }
+
+        .opening-hero .hero-heading {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: #F7C76B;
+            margin-bottom: 0.4rem;
+            letter-spacing: 3px;
+            text-shadow: 0 18px 60px rgba(2,12,12,0.6), 0 0 60px rgba(243,156,18,0.06);
+            text-transform: uppercase;
+        }
+
+        .opening-hero .hero-text {
+            font-size: 2.2rem;
+            line-height: 1.5;
+            color: #FFFFFF;
+            padding: 2rem 2.4rem;
+            border-radius: 14px;
+            margin: 0 auto 1.8rem auto;
+            background: rgba(255,255,255,0.02);
+            box-shadow: 0 36px 120px rgba(2,12,12,0.75), 0 0 120px rgba(38,166,91,0.04);
+            font-weight: 700;
+            letter-spacing: 0.3px;
+            transform-origin: center;
+            animation: hero-text-pop 900ms cubic-bezier(.2,.9,.3,1) both, hero-glow 3.6s ease-in-out infinite;
+            border-left: 6px solid rgba(243,156,18,0.95);
+            padding-left: 1.6rem;
+        }
+
+        @keyframes hero-glow {
+            0%,100% { box-shadow: 0 36px 120px rgba(2,12,12,0.75), 0 0 60px rgba(243,156,18,0.06); }
+            50% { box-shadow: 0 48px 140px rgba(2,12,12,0.85), 0 0 120px rgba(243,156,18,0.12); }
+        }
+
+        @keyframes hero-text-pop {
+            0% { opacity: 0; transform: scale(0.96) translateY(8px); }
+            60% { opacity: 1; transform: scale(1.02) translateY(-6px); }
+            100% { transform: scale(1) translateY(0); }
+        }
+
+        .opening-hero .hero-text::after {
+            content: '';
+            display: block;
+            height: 6px;
+            width: 160px;
+            margin: 1.6rem auto 0 auto;
+            background: linear-gradient(90deg, rgba(243,156,18,0.95), rgba(38,166,91,0.9));
+            border-radius: 999px;
+            box-shadow: 0 8px 40px rgba(243,156,18,0.16);
+        }
+
+        @media (max-width: 768px) {
+            .opening-hero .hero-heading { font-size: 2.2rem; }
+            .opening-hero .hero-text { font-size: 1.05rem; }
+        }
+
+        /* =====================================================
+           MODAL - VENTANA EMERGENTE
+           ===================================================== */
+        .card-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        /* CUANDO ESTÁ ACTIVO */
+        .card-modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .card-modal {
+            width: 100%;
+            max-width: 1100px;
+            background: linear-gradient(135deg, #0C3F2D 0%, #0A3829 100%);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 40px 120px rgba(0,0,0,0.9), 0 0 60px rgba(243,156,18,0.15);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            position: relative;
+            transform: scale(0.9) translateY(30px);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            border: 2px solid rgba(243,156,18,0.3);
+        }
+
+        .card-modal-overlay.active .card-modal {
+            transform: scale(1) translateY(0);
+        }
+
+        .card-modal-left {
+            padding: 3.5rem;
+            color: #fff;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03), transparent 40%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 8rem;
+            color: rgba(243,156,18,0.1);
+            position: absolute;
+            left: 2rem;
+            top: 1rem;
+            line-height: 1;
+            pointer-events: none;
+        }
+
+        .card-modal-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+            color: #FFFFFF;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .card-modal-subtitle {
+            color: #F39C12;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+
+        .card-modal-body {
+            color: rgba(255,255,255,0.9);
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .card-modal-avatars {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .card-modal-avatars img {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(243,156,18,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .card-modal-avatars img:hover {
+            transform: scale(1.1);
+        }
+
+        .card-modal-right {
+            background: linear-gradient(135deg, rgba(11,74,60,0.8), rgba(10,63,51,0.8)), url('assets/YDRAY-IMG_1099.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 450px;
+            position: relative;
+        }
+
+        .card-modal-close {
+            position: absolute;
+            right: 1.2rem;
+            top: 1.2rem;
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: 2px solid rgba(255,255,255,0.2);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 2100;
+            transition: all 0.3s ease;
+        }
+
+        .card-modal-close:hover {
+            background: #F39C12;
+            color: #0B3D2C;
+            border-color: #F39C12;
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 900px) {
+            .card-modal {
+                grid-template-columns: 1fr;
+                max-height: 90vh;
+                overflow-y: auto;
+            }
+            .card-number { display: none; }
+            .card-modal-right { min-height: 250px; order: -1; }
+            .card-modal-left { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO 3D (Apertura con reconocimiento) -->
+    <section class="hero-3d opening-hero" aria-label="Apertura - Reconocimiento ministerial">
+        <div class="hero-inner">
+            <h1 class="hero-heading">Reconocimiento Oficial</h1>
+            <p class="hero-text">
+                A través de la resolución 1598 del 30 de agosto de 2021, el Ministerio de Ciencia, Tecnología e Innovación otorgó el reconocimiento como centro de investigación al Instituto de Investigaciones Ambientales del Pacífico "John Von Neumann".
+            </p>
+        </div>
+        <div class="scroll-3d" onclick="document.querySelector('.groups-section').scrollIntoView({behavior: 'smooth'})"></div>
+    </section>
+
+    <!-- SECCIÓN DIAGRAMA PICIA -->
+    <section class="picia-diagram-section">
+        <div class="picia-container">
+            <div class="picia-header">
+                <span class="picia-badge">PICIA 2023 - 2026</span>
+                <h2 class="picia-title">Plan Institucional de Ciencia, Innovación y Apropiación</h2>
+                <p class="picia-subtitle">
+                    Nuestra hoja de ruta hacia la democratización del conocimiento y la justicia ambiental del Chocó Biogeográfico
+                </p>
+            </div>
+            
+            <div class="picia-image-wrapper">
+                <div class="picia-glow"></div>
+                <img src="assets/DIAGRAMA PICIA.png" alt="Diagrama PICIA 2023-2026 - Programas de investigación del IIAP" class="picia-image">
+            </div>
+            
+            <div class="picia-footer">
+                <div class="picia-stat">
+                    <span class="picia-stat-number">5</span>
+                    <span class="picia-stat-label">Programas de Investigación</span>
+                </div>
+                <div class="picia-stat">
+                    <span class="picia-stat-number">2</span>
+                    <span class="picia-stat-label">Programas Instrumentales</span>
+                </div>
+                <div class="picia-stat">
+                    <span class="picia-stat-number">4</span>
+                    <span class="picia-stat-label">Años de Ejecución</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GROUPS GRID WITH FLIP CARDS -->
+    <section class="groups-section">
+        <div class="groups-header">
+            <h2 class="groups-title">NUESTROS COMPONENTES DE INVESTIGACION</h2>
+            <p class="groups-subtitle">
+                Cada grupo aborda desafíos únicos del Pacífico colombiano, 
+                transformando investigación en acción
+            </p>
+        </div>
+
+        <div class="groups-grid">
+            <!-- Card 1 - SOCIOCULTURAL -->
+            <div class="flip-card" data-card-id="1">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">COMPONENTE<br/>SOCIOCULTURAL</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <h3 class="flip-card-back-title">Componente Sociocultural</h3>
+                        <p class="flip-card-back-description">Investigación participativa con comunidades locales.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Ecosistemas marinos y costeros</li>
+                            <li><strong>Líneas:</strong> Especies endémicas, conservación</li>
+                            <li><strong>Proyectos:</strong> 12 activos</li>
+                        </ul>
+                        <div class="card-actions">
+                            <button class="expand-btn" data-card="1">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 - AMBIENTAL -->
+            <div class="flip-card" data-card-id="2">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">COMPONENTE<br/>AMBIENTAL</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <h3 class="flip-card-back-title">Componente Ambiental</h3>
+                        <p class="flip-card-back-description">Restauración y manejo de hábitats.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Ecosistemas terrestres</li>
+                            <li><strong>Líneas:</strong> Restauración ecológica</li>
+                            <li><strong>Proyectos:</strong> 15 activos</li>
+                        </ul>
+                        <div class="card-actions">
+                            <button class="expand-btn" data-card="2">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 - PRODUCTIVO -->
+            <div class="flip-card" data-card-id="3">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">COMPONENTE<br/>PRODUCTIVO</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <h3 class="flip-card-back-title">Componente Productivo</h3>
+                        <p class="flip-card-back-description">Proyectos productivos sostenibles.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Acuicultura y agricultura</li>
+                            <li><strong>Líneas:</strong> Producción sostenible</li>
+                            <li><strong>Proyectos:</strong> 10 activos</li>
+                        </ul>
+                        <div class="card-actions">
+                            <button class="expand-btn" data-card="3">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 - ECOSISTÉMICO -->
+            <div class="flip-card" data-card-id="4">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">COMPONENTE<br/>ECOSISTÉMICO</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <h3 class="flip-card-back-title">Componente Ecosistémico</h3>
+                        <p class="flip-card-back-description">Monitoreo y conservación de biodiversidad.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Biodiversidad regional</li>
+                            <li><strong>Líneas:</strong> Monitoreo, conservación</li>
+                            <li><strong>Proyectos:</strong> 18 activos</li>
+                        </ul>
+                        <div class="card-actions">
+                            <button class="expand-btn" data-card="4">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 - LABORATORIO DE DATOS -->
+            <div class="flip-card" data-card-id="5">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">LABORATORIO<br/>DE DATOS</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <h3 class="flip-card-back-title">Laboratorio de Datos</h3>
+                        <p class="flip-card-back-description">Análisis y procesamiento de información ambiental.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Ciencia de datos</li>
+                            <li><strong>Líneas:</strong> SIG, modelamiento</li>
+                            <li><strong>Proyectos:</strong> 8 activos</li>
+                        </ul>
+                        <div class="card-actions">
+                            <button class="expand-btn" data-card="5">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DUPLICATED SECTION: GRUPOS DE INVESTIGACIÓN -->
+    <section class="groups-section groups-section-compact">
+        <div class="groups-header">
+            <h2 class="groups-title">GRUPOS DE INVESTIGACIÓN</h2>
+            <p class="groups-subtitle">
+                Cada grupo aborda desafíos únicos del Pacífico colombiano, 
+                transformando investigación en acción
+            </p>
+        </div>
+
+        <div class="groups-grid">
+            <!-- Card 1 (dup) -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">Investigación Biodiversidad y Etnodesarrollo en el Pacífico Colombiano</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <p class="flip-card-back-description">Investigación participativa con comunidades locales.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Ecosistemas marinos y costeros</li>
+                            <li><strong>Líneas:</strong> Especies endémicas, conservación</li>
+                            <li><strong>Proyectos:</strong> 12 activos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 (dup) -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">INVESTIGACIÓN SISTEMAS PRODUCTIVOS TRADICIONALES, CULTURA Y SABERES ANCESTRALES DEL CHOCÓ BIOGEOGRÁFICO</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <p class="flip-card-back-description">Restauración y manejo de hábitats.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Sistemas productivos</li>
+                            <li><strong>Líneas:</strong> Saberes ancestrales</li>
+                            <li><strong>Proyectos:</strong> 12 activos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 (dup) -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">Geo informática Aplicada al Medio Ambiente - GAMA</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <p class="flip-card-back-description">Proyectos productivos sostenibles.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Geoinformática</li>
+                            <li><strong>Líneas:</strong> SIG, teledetección</li>
+                            <li><strong>Proyectos:</strong> 12 activos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 (dup) -->
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front flip-card-front-transparent">
+                        <div class="flip-card-front-title">COMUNIDADES ÉTNICAS Y SABERES DEL CHOCÓ BIOGEOGRÁFICO</div>
+                    </div>
+                    <div class="flip-card-back flip-card-back-sendero">
+                        <h3 class="flip-card-back-title">Comunidades Étnicas</h3>
+                        <p class="flip-card-back-description">Monitoreo y conservación de biodiversidad.</p>
+                        <ul class="group-details">
+                            <li><strong>Enfoque:</strong> Comunidades étnicas</li>
+                            <li><strong>Líneas:</strong> Saberes tradicionales</li>
+                            <li><strong>Proyectos:</strong> 12 activos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PARALLAX STAT -->
+    <section class="parallax-research">
+        <div class="parallax-layer">
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+            <div class="floating-shape"></div>
+        </div>
+        <div class="parallax-research-content">
+            <div class="parallax-stat">65+</div>
+            <p class="parallax-stat-text">
+                Proyectos de investigación activos<br/>
+                transformando conocimiento en conservación
+            </p>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE TIMELINE -->
+    <section class="timeline-interactive">
+        <div class="timeline-header">
+            <h2 class="timeline-title">PROCESO DE INVESTIGACIÓN</h2>
+            <p class="timeline-subtitle">De la pregunta científica al impacto territorial</p>
+        </div>
+
+        <div class="timeline-container">
+            <div class="timeline-line-vertical"></div>
+
+            <div class="timeline-step">
+                <div class="timeline-content-box">
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">IDENTIFICACIÓN</h3>
+                    <p class="step-description">
+                        Detectamos problemáticas ambientales prioritarias en colaboración 
+                        con comunidades locales y autoridades regionales.
+                    </p>
+                </div>
+                <div></div>
+                <div class="timeline-badge">🔍</div>
+            </div>
+
+            <div class="timeline-step">
+                <div></div>
+                <div class="timeline-content-box">
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">INVESTIGACIÓN</h3>
+                    <p class="step-description">
+                        Nuestros equipos multidisciplinarios diseñan y ejecutan estudios 
+                        con metodologías científicas rigurosas y tecnología de punta.
+                    </p>
+                </div>
+                <div class="timeline-badge">🧪</div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="timeline-content-box">
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">ANÁLISIS</h3>
+                    <p class="step-description">
+                        Procesamos datos con software especializado, generamos modelos 
+                        predictivos y validamos resultados con la comunidad científica.
+                    </p>
+                </div>
+                <div></div>
+                <div class="timeline-badge">📊</div>
+            </div>
+
+            <div class="timeline-step">
+                <div></div>
+                <div class="timeline-content-box">
+                    <div class="step-number">04</div>
+                    <h3 class="step-title">APROPIACIÓN</h3>
+                    <p class="step-description">
+                        Transformamos conocimiento científico en herramientas accesibles 
+                        para tomadores de decisiones, educadores y comunidades.
+                    </p>
+                </div>
+                <div class="timeline-badge">🎓</div>
+            </div>
+
+            <div class="timeline-step">
+                <div class="timeline-content-box">
+                    <div class="step-number">05</div>
+                    <h3 class="step-title">IMPACTO</h3>
+                    <p class="step-description">
+                        Medimos y documentamos cómo nuestra investigación genera cambios 
+                        reales en políticas públicas, prácticas comunitarias y conservación.
+                    </p>
+                </div>
+                <div></div>
+                <div class="timeline-badge">🌱</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA SECTION -->
+    <section class="cta-research">
+        <div class="cta-research-content">
+            <h2 class="cta-research-title">ÚNETE A LA<br/>INVESTIGACIÓN</h2>
+            <p class="cta-research-text">
+                ¿Eres investigador, estudiante o profesional comprometido con la conservación?<br/>
+                El IIAP abre sus puertas a colaboraciones nacionales e internacionales.
+            </p>
+            <div class="cta-buttons">
+                <a href="#" class="cta-btn cta-btn-primary">Conoce Nuestros Proyectos</a>
+                <a href="#" class="cta-btn cta-btn-secondary">Contáctanos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+         MODAL - VENTANA EMERGENTE (OCULTA POR DEFECTO)
+         ===================================================== -->
+    <div id="card-modal-overlay" class="card-modal-overlay">
+        <div class="card-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="card-modal-close" aria-label="Cerrar modal">×</button>
+            <div class="card-modal-left">
+                <div class="card-number" id="modal-number">01</div>
+                <h3 class="card-modal-title" id="modal-title">COMPONENTE DE INVESTIGACIÓN SOCIOCULTURAL</h3>
+                <div class="card-modal-subtitle" id="modal-subtitle">ENERGÍA DEL FUTURO</div>
+                <p class="card-modal-body" id="modal-body">
+                    90 paneles solares de última generación alimentan cada rincón del centro. Esta infraestructura no solo reduce la huella de carbono: cada mes ahorra 2 millones de pesos que se reinvierten directamente en conservación. El sol del Chocó, tan generoso como su biodiversidad, ahora también impulsa la ciencia que lo protege.
+                </p>
+                <div class="card-modal-avatars">
+                    <img src="assets/avatar1.jpg" alt="Investigador 1" onerror="this.style.background='#F39C12'">
+                    <img src="assets/avatar2.jpg" alt="Investigador 2" onerror="this.style.background='#26A65B'">
+                    <img src="assets/avatar3.jpg" alt="Investigador 3" onerror="this.style.background='#0C3547'">
+                </div>
+            </div>
+            <div class="card-modal-right" id="modal-image"></div>
+        </div>
+    </div>
+
+    <script>
+        // =====================================================
+        // DATOS DE LAS TARJETAS PARA EL MODAL
+        // =====================================================
+        const cardData = {
+            1: {
+                number: '01',
+                title: 'COMPONENTE DE INVESTIGACIÓN SOCIOCULTURAL',
+                subtitle: 'TEJIENDO COMUNIDAD Y CIENCIA',
+                body: 'Nuestro componente sociocultural integra el conocimiento ancestral de las comunidades afrodescendientes e indígenas del Pacífico con metodologías científicas modernas. Trabajamos mano a mano con líderes comunitarios para documentar prácticas tradicionales, fortalecer la gobernanza ambiental y promover el desarrollo sostenible desde las bases.',
+                image: 'assets/YDRAY-IMG_1099.jpeg'
+            },
+            2: {
+                number: '02',
+                title: 'COMPONENTE AMBIENTAL',
+                subtitle: 'RESTAURANDO ECOSISTEMAS',
+                body: 'El componente ambiental lidera iniciativas de restauración ecológica en áreas degradadas del Chocó Biogeográfico. Implementamos viveros comunitarios, reforestamos con especies nativas y monitoreamos la recuperación de ecosistemas estratégicos como manglares, bosques húmedos y humedales costeros.',
+                image: 'assets/VIVERO.jpeg'
+            },
+            3: {
+                number: '03',
+                title: 'COMPONENTE PRODUCTIVO',
+                subtitle: 'PRODUCCIÓN SOSTENIBLE',
+                body: 'Desarrollamos sistemas productivos que armonizan la economía local con la conservación ambiental. Desde acuicultura sostenible en los piscitanques hasta agroforestería tradicional, apoyamos a las comunidades a generar ingresos dignos mientras protegen su territorio.',
+                image: 'assets/PISCITANQUES.jpeg'
+            },
+            4: {
+                number: '04',
+                title: 'COMPONENTE ECOSISTÉMICO',
+                subtitle: 'GUARDIANES DE LA BIODIVERSIDAD',
+                body: 'Somos los vigías de uno de los hotspots de biodiversidad más importantes del planeta. Nuestro sendero ecológico Manigua y las estaciones de monitoreo nos permiten documentar especies endémicas, rastrear cambios ecosistémicos y generar datos cruciales para la toma de decisiones de conservación.',
+                image: 'assets/SENDERO.jpeg'
+            },
+            5: {
+                number: '05',
+                title: 'LABORATORIO DE DATOS',
+                subtitle: 'CIENCIA DE DATOS PARA LA CONSERVACIÓN',
+                body: 'El Laboratorio de Datos procesa, analiza y visualiza información ambiental de todo el Pacífico colombiano. Utilizamos sistemas de información geográfica (SIG), modelamiento predictivo e inteligencia artificial para transformar datos crudos en herramientas de decisión para gestores ambientales.',
+                image: 'assets/ESPACIOS_CENTRO.jpeg'
+            }
+        };
+
+        // =====================================================
+        // FUNCIONALIDAD DEL MODAL
+        // =====================================================
+        (function() {
+            const overlay = document.getElementById('card-modal-overlay');
+            const closeBtn = overlay.querySelector('.card-modal-close');
+            const modal = overlay.querySelector('.card-modal');
+
+            // Elementos del modal para actualizar contenido
+            const modalNumber = document.getElementById('modal-number');
+            const modalTitle = document.getElementById('modal-title');
+            const modalSubtitle = document.getElementById('modal-subtitle');
+            const modalBody = document.getElementById('modal-body');
+            const modalImage = document.getElementById('modal-image');
+
+            // Función para abrir el modal
+            function openModal(cardId) {
+                const data = cardData[cardId];
+                if (!data) return;
+
+                // Actualizar contenido
+                modalNumber.textContent = data.number;
+                modalTitle.textContent = data.title;
+                modalSubtitle.textContent = data.subtitle;
+                modalBody.textContent = data.body;
+                modalImage.style.backgroundImage = `linear-gradient(135deg, rgba(11,74,60,0.6), rgba(10,63,51,0.6)), url('${data.image}')`;
+
+                // Mostrar modal
+                overlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+                // Focus para accesibilidad
+                closeBtn.focus();
+            }
+
+            // Función para cerrar el modal
+            function closeModal() {
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Event listeners para botones "Ver más"
+            document.querySelectorAll('.expand-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Evitar que el click propague
+                    const cardId = btn.getAttribute('data-card');
+                    openModal(cardId);
+                });
+            });
+
+            // Cerrar con el botón X
+            closeBtn.addEventListener('click', closeModal);
+
+            // Cerrar al hacer click fuera del modal
+            overlay.addEventListener('click', (e) => {
+                if (e.target === overlay) {
+                    closeModal();
+                }
+            });
+
+            // Cerrar con tecla Escape
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+        })();
+
+        // =====================================================
+        // ANIMACIONES DE SCROLL
+        // =====================================================
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animaciones
+        document.querySelectorAll(
+            '.groups-header, .flip-card, .timeline-step, .parallax-stat, .parallax-stat-text'
+        ).forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax floating shapes
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            
+            document.querySelectorAll('.floating-shape').forEach((shape, index) => {
+                const speed = 0.1 + (index * 0.05);
+                shape.style.transform = `translate(${scrolled * speed}px, ${scrolled * speed * 0.3}px) scale(${1 + scrolled * 0.0001})`;
+            });
+        });
+
+        // Stagger animation para flip cards
+        const flipCards = document.querySelectorAll('.flip-card');
+        flipCards.forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+
+        // Timeline steps stagger
+        const timelineSteps = document.querySelectorAll('.timeline-step');
+        timelineSteps.forEach((step, index) => {
+            step.style.transitionDelay = `${index * 0.2}s`;
+        });
+    </script>
+</body>
+</html>
