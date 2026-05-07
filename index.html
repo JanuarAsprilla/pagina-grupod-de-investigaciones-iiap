@@ -101,11 +101,11 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 .flip-front{background:linear-gradient(135deg,var(--forest),#0D3B24);background-size:cover;background-position:center;justify-content:flex-end;padding:0;}
 .flip-front::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,rgba(10,40,20,.92) 0%,transparent 100%);pointer-events:none;border-radius:0 0 var(--r) var(--r);}
 .flip-back{transform:rotateY(180deg);background:var(--surface);border:1px solid var(--border);text-align:center;justify-content:flex-start;padding-top:2.5rem;}
-.sec-flip:not(.compact) .flip-card:nth-child(1) .flip-front{background-image:linear-gradient(135deg,rgba(13,59,36,.6),rgba(10,48,26,.7)),url('assets/YDRAY-IMG_1099.jpeg');border:2px solid rgba(232,150,15,.4);}
-.sec-flip:not(.compact) .flip-card:nth-child(2) .flip-front{background-image:linear-gradient(135deg,rgba(13,59,36,.6),rgba(10,48,26,.7)),url('assets/VIVERO.jpeg');border:2px solid rgba(232,150,15,.4);}
-.sec-flip:not(.compact) .flip-card:nth-child(3) .flip-front{background-image:linear-gradient(135deg,rgba(13,59,36,.6),rgba(10,48,26,.7)),url('assets/PISCITANQUES.jpeg');border:2px solid rgba(232,150,15,.4);}
-.sec-flip:not(.compact) .flip-card:nth-child(4) .flip-front{background-image:linear-gradient(135deg,rgba(13,59,36,.6),rgba(10,48,26,.7)),url('assets/SENDERO.jpeg');border:2px solid rgba(232,150,15,.4);}
-.sec-flip:not(.compact) .flip-card:nth-child(5) .flip-front{background-image:linear-gradient(135deg,rgba(13,59,36,.6),rgba(10,48,26,.7)),url('assets/ESPACIOS_CENTRO.jpeg');border:2px solid rgba(232,150,15,.4);}
+.sec-flip:not(.compact) .flip-card:nth-child(1) .flip-front{background-image:linear-gradient(135deg,rgba(13, 59, 36, 0.158),rgba(10, 48, 26, 0.301)),url('assets/COMPONENTE_SOCIOCULTURAL.jpeg');border:2px solid rgba(232, 149, 15, 0.212);}
+.sec-flip:not(.compact) .flip-card:nth-child(2) .flip-front{background-image:linear-gradient(135deg,rgba(13, 59, 36, 0.158),rgba(10, 48, 26, 0.301)),url('assets/COMPONENTE_AMBIENTAL.jpeg');border:2px solid rgba(232, 149, 15, 0.212);}
+.sec-flip:not(.compact) .flip-card:nth-child(3) .flip-front{background-image:linear-gradient(135deg,rgba(13, 59, 36, 0.158),rgba(10, 48, 26, 0.301)),url('assets/PISCITANQUES.jpeg');border:2px solid rgba(232, 149, 15, 0.212);}
+.sec-flip:not(.compact) .flip-card:nth-child(4) .flip-front{background-image:linear-gradient(135deg,rgba(13, 59, 36, 0.158),rgba(10, 48, 26, 0.301)),url('assets/COMPONENTE_ECOSISTEMICO.jpeg');border:2px solid rgba(232, 149, 15, 0.212);}
+.sec-flip:not(.compact) .flip-card:nth-child(5) .flip-front{background-image:linear-gradient(135deg,rgba(13, 59, 36, 0.158),rgba(10, 48, 26, 0.301)),url('assets/LABORATORIO_DATOS.jpeg');border:2px solid rgba(232, 149, 15, 0.212);}
 .sec-flip.compact{counter-reset:grp;}
 .sec-flip.compact .flip-card{counter-increment:grp;}
 .sec-flip.compact .flip-front{background:linear-gradient(150deg,#1A5C3A 0%,#0D3B24 60%,#0A2E1C 100%)!important;border:2px solid rgba(232,150,15,.35)!important;justify-content:center;overflow:hidden;}
@@ -154,7 +154,7 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 .org-hero-card .org-portrait::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(7,28,17,.88) 0%,rgba(7,28,17,.2) 55%,transparent 100%);}
 .org-hero-card .org-caption{padding:1.4rem 1.2rem;}
 .org-hero-card .o-chip{background:rgba(232,150,15,.22);color:var(--amber);border-color:rgba(232,150,15,.35);}
-.org-hero-card .o-name{color:#fff;font-size:1.5rem;}
+.org-hero-card .o-name{color:#fff;font-size:1.2rem;letter-spacing:0;}
 .org-hero-card .o-role{color:rgba(255,255,255,.72);}
 .org-sm-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh-sm);transition:transform .4s var(--ease),box-shadow .4s var(--ease);cursor:pointer;will-change:transform;}
 .org-sm-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--forest),var(--amber));}
@@ -164,7 +164,7 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 .org-sm-card:hover .org-photo img{transform:scale(1.09);}
 .org-info{padding:1.5rem 1.2rem;text-align:center;}
 .o-chip{display:inline-block;background:var(--forest-light);color:var(--forest);font-family:'Inter',sans-serif;font-size:.64rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.2rem .8rem;border-radius:var(--pill);margin-bottom:.5rem;border:1px solid rgba(26,92,58,.15);}
-.o-name{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:var(--text);letter-spacing:1px;margin-bottom:.2rem;line-height:1.15;}
+.o-name{font-family:'Inter',sans-serif;font-weight:700;font-size:1rem;color:var(--text);letter-spacing:0;margin-bottom:.2rem;line-height:1.25;}
 .o-role{font-family:'Crimson Text',serif;font-size:.88rem;color:var(--text-muted);font-style:italic;}
 .org-connector{display:flex;flex-direction:column;align-items:center;padding:.5rem 0;}
 .org-connector::before{content:'';display:block;width:2px;height:1.8rem;background:linear-gradient(to bottom,rgba(26,92,58,.25),var(--forest));}
@@ -175,7 +175,7 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 .org-branch>.org-sm-card{margin-bottom:.9rem;}
 .org-branch .org-photo{height:180px;}
 .org-branch .org-info{padding:1.2rem .9rem;}
-.org-branch>.org-sm-card .o-name{font-size:1.1rem;}
+.org-branch>.org-sm-card .o-name{font-size:.95rem;}
 .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;text-align:left;}
 .mini-row{display:flex;align-items:center;gap:.75rem;background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:.5rem .8rem;transition:transform .3s var(--ease),border-color .3s;}
 .mini-row:hover{transform:translateX(3px);border-color:rgba(26,92,58,.22);}
@@ -239,9 +239,9 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 .soc-sec{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:6rem 2rem;background:linear-gradient(135deg,#0D3B24,#133D27);position:relative;overflow:hidden;scroll-snap-align:start;scroll-snap-stop:always;}
 .soc-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 70%,rgba(232,150,15,.08) 0%,transparent 40%),radial-gradient(ellipse at 70% 30%,rgba(45,122,82,.12) 0%,transparent 40%);pointer-events:none;}
 .soc-box{max-width:900px;width:100%;position:relative;z-index:1;text-align:center;}
-.soc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:4rem;}
+.soc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;margin-top:4rem;}
 .soc-link{display:flex;flex-direction:column;align-items:center;gap:1rem;padding:2.5rem 2rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:var(--r);text-decoration:none;transition:opacity .6s var(--ease),transform .6s var(--ease),background .3s,border-color .3s,box-shadow .3s;opacity:0;transform:translateY(40px);}
-.soc-link:nth-child(2){transition-delay:.1s;}.soc-link:nth-child(3){transition-delay:.2s;}.soc-link:nth-child(4){transition-delay:.3s;}
+.soc-link:nth-child(2){transition-delay:.1s;}.soc-link:nth-child(3){transition-delay:.2s;}.soc-link:nth-child(4){transition-delay:.3s;}.soc-link:nth-child(5){transition-delay:.4s;}.soc-link:nth-child(6){transition-delay:.5s;}.soc-link:nth-child(7){transition-delay:.6s;}
 .soc-link.visible{opacity:1;transform:none;}
 .soc-link:hover{background:rgba(255,255,255,.14);transform:translateY(-6px)!important;border-color:rgba(255,255,255,.3);box-shadow:0 20px 60px rgba(0,0,0,.3);}
 .soc-link svg{width:40px;height:40px;fill:#fff;transition:transform .3s var(--spring);}
@@ -354,21 +354,50 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 .team-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .6s var(--ease);}
 .team-card:hover .team-photo img{transform:scale(1.08);}
 .team-info{padding:1.1rem 1rem;text-align:center;}
-.team-name{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:var(--text);letter-spacing:.5px;margin-bottom:.25rem;line-height:1.1;}
+.team-name{font-family:'Inter',sans-serif;font-weight:700;font-size:.95rem;color:var(--text);letter-spacing:0;margin-bottom:.25rem;line-height:1.3;}
 .team-role{font-family:'Crimson Text',serif;font-size:.88rem;color:var(--text-muted);font-style:italic;margin-bottom:.55rem;}
 .team-tag{display:inline-block;background:var(--forest-light);color:var(--forest);font-family:'Inter',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.15rem .65rem;border-radius:var(--pill);border:1px solid rgba(26,92,58,.15);}
+
+/* SIDENAV */
+/* SIDENAV */
+.sidenav{position:fixed;left:1.5rem;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:flex-start;gap:.52rem;z-index:999;padding:.2rem 0;}
+.sn-item{display:flex;align-items:center;gap:.46rem;border-radius:2rem;text-decoration:none;cursor:pointer;padding:.28rem;max-width:13px;overflow:hidden;white-space:nowrap;border:1px solid transparent;background:transparent;transition:max-width .52s cubic-bezier(0.16,1,0.3,1),padding .52s cubic-bezier(0.16,1,0.3,1),background .4s,border-color .4s,box-shadow .4s;}
+.sn-item.active{max-width:180px;padding:.34rem .8rem .34rem .4rem;background:rgba(255,255,255,.16);backdrop-filter:blur(22px) saturate(170%);-webkit-backdrop-filter:blur(22px) saturate(170%);border-color:rgba(255,255,255,.32);box-shadow:0 6px 28px rgba(26,92,58,.1),inset 0 1.5px 0 rgba(255,255,255,.5),inset 0 -1px 0 rgba(0,0,0,.03);}
+.sn-pip{width:7px;height:7px;border-radius:50%;background:rgba(26,92,58,.32);flex-shrink:0;transition:background .35s,transform .35s;display:block;}
+.sn-item.active .sn-pip{background:var(--amber);}
+.sn-item:hover:not(.active){padding:.28rem .28rem;}
+.sn-item:hover:not(.active) .sn-pip{background:rgba(26,92,58,.55);transform:scale(1.25);}
+.sn-text{font-family:'Inter',sans-serif;font-size:.58rem;font-weight:700;letter-spacing:.65px;text-transform:uppercase;color:var(--forest);opacity:0;transition:opacity .12s;pointer-events:none;line-height:1;}
+.sn-item.active .sn-text{opacity:1;transition:opacity .28s .26s;}
+@media(max-width:768px){.sidenav{display:none;}}
 </style>
 </head>
 <body>
 
+<nav class="sidenav" id="sidenav" aria-label="Navegación de secciones">
+  <a class="sn-item active" data-target="sec-galeria"         data-label="Galería"         href="#sec-galeria"><span class="sn-pip"></span><span class="sn-text">Galería</span></a>
+  <a class="sn-item"        data-target="sec-inicio"          data-label="Inicio"          href="#sec-inicio"><span class="sn-pip"></span><span class="sn-text">Inicio</span></a>
+  <a class="sn-item"        data-target="sec-picia"           data-label="PICIA"           href="#sec-picia"><span class="sn-pip"></span><span class="sn-text">PICIA</span></a>
+  <a class="sn-item"        data-target="sec-componentes"     data-label="Componentes"     href="#sec-componentes"><span class="sn-pip"></span><span class="sn-text">Componentes</span></a>
+  <a class="sn-item"        data-target="sec-grupos"          data-label="Grupos"          href="#sec-grupos"><span class="sn-pip"></span><span class="sn-text">Grupos</span></a>
+  <a class="sn-item"        data-target="sec-org"             data-label="Jerarquía"       href="#sec-org"><span class="sn-pip"></span><span class="sn-text">Jerarquía</span></a>
+  <a class="sn-item"        data-target="sec-talento"         data-label="Talento Humano"  href="#sec-talento"><span class="sn-pip"></span><span class="sn-text">Talento</span></a>
+  <a class="sn-item"        data-target="sec-video"           data-label="Video"           href="#sec-video"><span class="sn-pip"></span><span class="sn-text">Video</span></a>
+  <a class="sn-item"        data-target="sec-timeline"        data-label="Proceso"         href="#sec-timeline"><span class="sn-pip"></span><span class="sn-text">Proceso</span></a>
+  <a class="sn-item"        data-target="sec-reconocimiento"  data-label="Reconocimiento"  href="#sec-reconocimiento"><span class="sn-pip"></span><span class="sn-text">Reconoc.</span></a>
+  <a class="sn-item"        data-target="sec-stat"            data-label="Estadísticas"    href="#sec-stat"><span class="sn-pip"></span><span class="sn-text">Stats</span></a>
+  <a class="sn-item"        data-target="sec-social"          data-label="Social"          href="#sec-social"><span class="sn-pip"></span><span class="sn-text">Social</span></a>
+  <a class="sn-item"        data-target="sec-cta"             data-label="Contacto"        href="#sec-cta"><span class="sn-pip"></span><span class="sn-text">Contacto</span></a>
+</nav>
+
 <!-- 0. CARRUSEL -->
-<section class="cs-sec" aria-label="Galería visual IIAP">
+<section id="sec-galeria" class="cs-sec" aria-label="Galería visual IIAP">
   <div class="cs-carousel" id="mainCarousel">
     <div class="cs-track" id="csTrack">
       <div class="cs-slide"><img src="assets/YDRAY-IMG_1099.jpeg" alt="Investigación de campo IIAP" loading="eager" fetchpriority="high"><div class="cs-caption"><p>Investigación de campo en el Chocó Biogeográfico</p></div></div>
       <div class="cs-slide"><img src="assets/VIVERO.jpeg" alt="Vivero IIAP" loading="lazy"><div class="cs-caption"><p>Laboratorios de producción vegetal</p></div></div>
       <div class="cs-slide"><img src="assets/SENDERO.jpeg" alt="Sendero ecológico" loading="lazy"><div class="cs-caption"><p>Monitoreo de ecosistemas estratégicos</p></div></div>
-      <div class="cs-slide"><img src="assets/ESPACIOS_CENTRO.jpeg" alt="Centro de investigación" loading="lazy"><div class="cs-caption"><p>Espacios del centro de investigación</p></div></div>
+      <div class="cs-slide"><img src="assets/vainilla.jpeg" alt="Centro Vainilla" loading="lazy"><div class="cs-caption"><p>Investigacion de plata vainilla</p></div></div>
       <div class="cs-slide"><img src="assets/PISCITANQUES.jpeg" alt="Sistemas productivos" loading="lazy"><div class="cs-caption"><p>Investigación en sistemas productivos tradicionales</p></div></div>
     </div>
     <button class="cs-btn cs-prev" id="csPrev" aria-label="Imagen anterior"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="10 3 5 8 10 13"/></svg></button>
@@ -378,7 +407,7 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 </section>
 
 <!-- 1. HERO -->
-<section class="hero" aria-label="Inicio">
+<section id="sec-inicio" class="hero" aria-label="Inicio">
 <canvas id="hero-canvas"></canvas>
 <div class="hero-l">
   <p class="hero-eye">IIAP · Instituto de Investigaciones Ambientales del Pacífico</p>
@@ -401,21 +430,9 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 </div>
 </section>
 
-<!-- 2. RECONOCIMIENTO OFICIAL -->
-<section class="recon-sec" aria-label="Reconocimiento Oficial">
-<div class="recon-bg-num" aria-hidden="true">1598</div>
-<div class="recon-inner">
-  <div class="recon-badge"><span class="recon-badge-dot"></span><span class="recon-badge-txt">Reconocimiento Oficial</span></div>
-  <p class="recon-date">30 de agosto de 2021</p>
-  <h2 class="recon-res">Resolución 1598</h2>
-  <div class="recon-divider"></div>
-  <p class="recon-body">A través de la resolución 1598 del 30 de agosto de 2021, el <strong>Ministerio de Ciencia, Tecnología e Innovación</strong> otorgó el reconocimiento como centro de investigación al <strong>Instituto de Investigaciones Ambientales del Pacífico "John Von Neumann"</strong>.</p>
-  <span class="recon-min">Ministerio de Ciencia, Tecnología e Innovación — República de Colombia</span>
-</div>
-</section>
 
-<!-- 3. PICIA -->
-<section class="picia">
+<!-- 2. PICIA -->
+<section id="sec-picia" class="picia">
 <div class="picia-inner">
   <span class="picia-tag">PICIA 2023 – 2026</span>
   <h2 class="picia-h">Plan Institucional de Ciencia, Innovación y Apropiación</h2>
@@ -430,7 +447,7 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 </section>
 
 <!-- 3. COMPONENTES -->
-<section class="sec-flip">
+<section id="sec-componentes" class="sec-flip">
 <div class="flip-wrap">
   <div class="flip-head"><span class="badge">Programas de Investigación</span><h2 class="flip-htitle">NUESTROS COMPONENTES DE INVESTIGACIÓN</h2><p class="flip-hsub">Cinco ejes que articulan el conocimiento del Pacífico colombiano</p></div>
   <div class="flip-grid">
@@ -444,7 +461,7 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 </section>
 
 <!-- 4. GRUPOS -->
-<section class="sec-flip compact">
+<section id="sec-grupos" class="sec-flip compact">
 <div class="flip-wrap">
   <div class="flip-head"><span class="badge">Equipos Científicos</span><h2 class="flip-htitle">GRUPOS DE INVESTIGACIÓN</h2><p class="flip-hsub">Colectivos especializados que lideran la generación de conocimiento en el Pacífico colombiano</p></div>
   <div class="gc-wrap">
@@ -468,7 +485,7 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
         </div>
       </div>
       <div class="gc-card" data-grupo="3" role="button" tabindex="0" aria-label="Ver grupo 3">
-        <img src="assets/ESPACIOS_CENTRO.jpeg" alt="GAMA Geoinformática Ambiental" loading="lazy">
+        <img src="assets/YDRAY-IMG_9766.jpeg" alt="GAMA Geoinformática Ambiental" loading="lazy">
         <div class="gc-overlay"></div>
         <div class="gc-content">
           <span class="gc-num">Grupo 03</span>
@@ -504,17 +521,8 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
   </div>
 </div>
 
-<!-- 5. STAT -->
-<section class="par-sec">
-<div class="par-layer"><div class="par-shape"></div><div class="par-shape"></div><div class="par-shape"></div></div>
-<div class="par-content">
-  <div class="par-num" id="par-num">65+</div>
-  <p class="par-txt">Proyectos de investigación activos<br/>transformando conocimiento en conservación</p>
-</div>
-</section>
-
-<!-- 6. ORG -->
-<section class="org-sec">
+<!-- 5. ORG -->
+<section id="sec-org" class="org-sec">
 <div class="org-box">
   <span class="badge">Estructura Institucional</span>
   <h2 class="h-dark">JERARQUÍA ORGANIZACIONAL</h2>
@@ -524,8 +532,8 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
   <div class="org-tag">Dirección General</div>
   <div class="org-tier-top">
     <div class="org-hero-card">
-      <div class="org-portrait"><img src="assets/oficina 1.jpeg" alt="Director General"></div>
-      <div class="org-caption"><span class="o-chip">Director General</span><h3 class="o-name">MSc. Carlos A. Rentería</h3><p class="o-role">Instituto de Investigaciones Ambientales del Pacífico</p></div>
+      <div class="org-portrait"><img src="assets/DIRECTOR.jpeg" alt="Director General"></div>
+      <div class="org-caption"><span class="o-chip">Director General</span><h3 class="o-name">William Klinger Brahan</h3><p class="o-role">Ingeniero Forestal de la Universidad Distrital y Magister en Educación de la Universidad Pedagógica.</p></div>
     </div>
   </div>
 
@@ -536,8 +544,8 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
   <div class="org-tag">Subdirección de Investigaciones</div>
   <div class="org-tier-mid">
     <div class="org-mid-card">
-      <div class="org-photo"><img src="assets/SUBDIRECTOR.JPG" alt="Subdirector de Investigaciones"></div>
-      <div class="org-info"><span class="o-chip">Subdirector de Investigaciones</span><h3 class="o-name">Subdirector(a)</h3><p class="o-role">Coordinación Científica e Investigativa</p></div>
+      <div class="org-photo"><img src="assets/SUBDIRECTOR.jpeg" alt="Subdirector de Investigaciones"></div>
+      <div class="org-info"><span class="o-chip">Subdirector de Investigaciones</span><h3 class="o-name">Giovanny Ramirez</h3><p class="o-role">Doctor en Ciencias Biología de la Universidad de Nacional de Colombia</p></div>
     </div>
   </div>
 
@@ -547,40 +555,43 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
   <!-- NIVEL 3: 5 COORDINADORES -->
   <div class="org-tag">Coordinadores de Componente</div>
   <div class="org-tier-bottom">
-    <div class="org-sm-card"><div class="org-photo"><img src="assets/oficina 6.jpeg" alt="Coord. Sociocultural"></div><div class="org-info"><span class="o-chip">Comp. Sociocultural</span><h3 class="o-name">Coord. Sociocultural</h3><p class="o-role">Comunidades y Saberes</p></div></div>
-    <div class="org-sm-card"><div class="org-photo"><img src="assets/oficina 7.jpeg" alt="Coord. Ambiental"></div><div class="org-info"><span class="o-chip">Comp. Ambiental</span><h3 class="o-name">Coord. Ambiental</h3><p class="o-role">Monitoreo y Riesgos</p></div></div>
-    <div class="org-sm-card"><div class="org-photo"><img src="assets/oficina 8.jpeg" alt="Coord. Productivo"></div><div class="org-info"><span class="o-chip">Comp. Productivo</span><h3 class="o-name">Coord. Productivo</h3><p class="o-role">Bioeconomía y Territorio</p></div></div>
-    <div class="org-sm-card"><div class="org-photo"><img src="assets/oficina 2.jpeg" alt="Coord. Ecosistémico"></div><div class="org-info"><span class="o-chip">Comp. Ecosistémico</span><h3 class="o-name">Coord. Ecosistémico</h3><p class="o-role">Biodiversidad y Restauración</p></div></div>
-    <div class="org-sm-card"><div class="org-photo"><img src="assets/oficina 3.jpeg" alt="Coord. Lab. Datos"></div><div class="org-info"><span class="o-chip">Lab. de Datos</span><h3 class="o-name">Coord. Lab. Datos</h3><p class="o-role">Geoinformática y SIG</p></div></div>
+    <div class="org-sm-card"><div class="org-photo"><img src="assets/CARLOS_ARIEL.jpeg" alt="Coord. Sociocultural"></div><div class="org-info"><span class="o-chip">Comp. Sociocultural</span><h3 class="o-name">Carlos Ariel Rentería Jiménez</h3><p class="o-role">Coordinador</p></div></div>
+    <div class="org-sm-card"><div class="org-photo"><img src="assets/LADY_VARGAS.png" alt="Coord. Ambiental"></div><div class="org-info"><span class="o-chip">Comp. Ambiental</span><h3 class="o-name">Lady Yulenis Vargas Porras</h3><p class="o-role">Coordinadora</p></div></div>
+    <div class="org-sm-card"><div class="org-photo"><img src="assets/MOISES.jpeg" alt="Coord. Productivo"></div><div class="org-info"><span class="o-chip">Comp. Productivo</span><h3 class="o-name">Moises Mosquera Blandon</h3><p class="o-role">Coordinador</p></div></div>
+    <div class="org-sm-card"><div class="org-photo"><img src="assets/ZULMARY.jpeg" alt="Coord. Ecosistémico"></div><div class="org-info"><span class="o-chip">Comp. Ecosistémico</span><h3 class="o-name">Zulmary Valoyez Cardozo</h3><p class="o-role">Coordinadora</p></div></div>
+    <div class="org-sm-card"><div class="org-photo"><img src="assets/EDSSON_NAGLE.jpeg" alt="Coord. Lab. Datos"></div><div class="org-info"><span class="o-chip">Lab. de Datos</span><h3 class="o-name">Edsson Nagle Ramirez</h3><p class="o-role">Coordinador</p></div></div>
   </div>
 </div>
 </section>
 
-<!-- 7. TALENTO HUMANO -->
-<section class="res-sec">
+<!-- 6. TALENTO HUMANO -->
+<section id="sec-talento" class="res-sec">
 <div class="res-box">
   <span class="badge">Talento Humano</span>
   <h2 class="h-dark">NUESTRO EQUIPO</h2>
   <p class="p-dark">Personal científico y profesional dedicado a la investigación ambiental del Pacífico colombiano</p>
   <div class="team-grid">
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/ROBINSON.JPG" alt="Robinson" loading="lazy"></div><div class="team-info"><h3 class="team-name">Robinson</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Ecosistémico</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/PEDRO.JPG" alt="Pedro" loading="lazy"></div><div class="team-info"><h3 class="team-name">Pedro</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Productivo</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/MIRLA (2).JPG" alt="Mirla" loading="lazy"></div><div class="team-info"><h3 class="team-name">Mirla</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Ambiental</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/YOHANITA.JPG" alt="Yohanita" loading="lazy"></div><div class="team-info"><h3 class="team-name">Yohanita</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Sociocultural</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/ZORAIDA.JPG" alt="Zoraida" loading="lazy"></div><div class="team-info"><h3 class="team-name">Zoraida</h3><p class="team-role">Investigadora</p><span class="team-tag">Lab. Datos</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/ZULMARI.JPG" alt="Zulmari" loading="lazy"></div><div class="team-info"><h3 class="team-name">Zulmari</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Ambiental</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/EDSSON_NAGLE.JPG" alt="Edsson Nagle" loading="lazy"></div><div class="team-info"><h3 class="team-name">Edsson Nagle</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Productivo</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/ELADIO.JPG" alt="Eladio" loading="lazy"></div><div class="team-info"><h3 class="team-name">Eladio</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Ecosistémico</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/JOVANNY.JPG" alt="Jovanny" loading="lazy"></div><div class="team-info"><h3 class="team-name">Jovanny</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Sociocultural</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/JOVANNY_PINO.JPG" alt="Jovanny Pino" loading="lazy"></div><div class="team-info"><h3 class="team-name">Jovanny Pino</h3><p class="team-role">Investigador</p><span class="team-tag">Lab. Datos</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/LADY_VARGAS.JPG" alt="Lady Vargas" loading="lazy"></div><div class="team-info"><h3 class="team-name">Lady Vargas</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Ambiental</span></div></div>
-    <div class="team-card tilt"><div class="team-photo"><img src="assets/LUIS_JAVIER (2).JPG" alt="Luis Javier" loading="lazy"></div><div class="team-info"><h3 class="team-name">Luis Javier</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Productivo</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/YISKAR_DAMIAN.jpeg" alt="Yiskar Damian" loading="lazy"></div><div class="team-info"><h3 class="team-name">Yiskar Damian</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Ecosistémico</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/ROBINSON.jpeg" alt="Robinson" loading="lazy"></div><div class="team-info"><h3 class="team-name">Robinson</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Productivo</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/PEDRO.jpeg" alt="Pedro" loading="lazy"></div><div class="team-info"><h3 class="team-name">Pedro</h3><p class="team-role">Investigador</p><span class="team-tag">Lab. Datos</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/MIRLA.jpeg" alt="Mirla" loading="lazy"></div><div class="team-info"><h3 class="team-name">Mirla</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Productivo</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/ANA.jpeg" alt="Ana" loading="lazy"></div><div class="team-info"><h3 class="team-name">Ana</h3><p class="team-role">Asistente</p><span class="team-tag">Subdirección de Investigaciónes</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/SILVIO.jpeg" alt="Silvio" loading="lazy"></div><div class="team-info"><h3 class="team-name">Silvio</h3><p class="team-role">Apoyo</p><span class="team-tag">Subdirección de Investigaciónes</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/YOHANITA.jpeg" alt="Yohanita" loading="lazy"></div><div class="team-info"><h3 class="team-name">Yohanita</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Sociocultural</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/WILBER.JPG" alt="Wilber" loading="lazy"></div><div class="team-info"><h3 class="team-name">Wilber</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Productivo</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/WILMAN.jpeg" alt="Wilman" loading="lazy"></div><div class="team-info"><h3 class="team-name">Wilman</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Sociocultural</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/ELADIO.jpeg" alt="Eladio" loading="lazy"></div><div class="team-info"><h3 class="team-name">Eladio</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Ecosistémico</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/JOVANNY PINO.jpeg" alt="Jovanny Pino" loading="lazy"></div><div class="team-info"><h3 class="team-name">Jovanny Pino</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Productivo</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/LUIS_JAVIER.jpeg" alt="Luis Javier" loading="lazy"></div><div class="team-info"><h3 class="team-name">Luis Javier</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Ecosistémico</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/ZORAIDA.JPG" alt="Zoraida" loading="lazy"></div><div class="team-info"><h3 class="team-name">Zoraida</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Ambiental</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/ERICK_YAIR.jpeg" alt="Erick Yair" loading="lazy"></div><div class="team-info"><h3 class="team-name">Erick Yair</h3><p class="team-role">Investigador</p><span class="team-tag">Comp. Ecosistémico</span></div></div>
+    <div class="team-card tilt"><div class="team-photo"><img src="assets/FAIRY.png" alt="Fairy Medina" loading="lazy"></div><div class="team-info"><h3 class="team-name">Fairy Medina</h3><p class="team-role">Investigadora</p><span class="team-tag">Comp. Ambiental</span></div></div>
   </div>
 </div>
 </section>
 
-<!-- 8. VIDEO -->
-<section class="vid-sec">
+<!-- 7. VIDEO -->
+<section id="sec-video" class="vid-sec">
 <div class="vid-box">
   <span class="badge badge-ghost">Audiovisual</span>
   <h2 class="h-light">CONOCE EL IIAP</h2>
@@ -589,8 +600,8 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 </div>
 </section>
 
-<!-- 9. TIMELINE -->
-<section class="tl-sec">
+<!-- 8. TIMELINE -->
+<section id="sec-timeline" class="tl-sec">
 <div class="tl-box">
   <h2 class="tl-h">PROCESO DE INVESTIGACIÓN</h2>
   <p class="tl-sub">Del territorio al conocimiento — nuestro flujo de trabajo científico</p>
@@ -604,23 +615,48 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 </div>
 </section>
 
-<!-- 10. SOCIAL -->
-<section class="soc-sec">
+<!-- 9. RECONOCIMIENTO OFICIAL -->
+<section id="sec-reconocimiento" class="recon-sec" aria-label="Reconocimiento Oficial">
+<div class="recon-bg-num" aria-hidden="true">1598</div>
+<div class="recon-inner">
+  <div class="recon-badge"><span class="recon-badge-dot"></span><span class="recon-badge-txt">Reconocimiento Oficial</span></div>
+  <p class="recon-date">30 de agosto de 2021</p>
+  <h2 class="recon-res">Resolución 1598</h2>
+  <div class="recon-divider"></div>
+  <p class="recon-body">A través de la resolución 1598 del 30 de agosto de 2021, el <strong>Ministerio de Ciencia, Tecnología e Innovación</strong> otorgó el reconocimiento como centro de investigación al <strong>Instituto de Investigaciones Ambientales del Pacífico "John Von Neumann"</strong>.</p>
+  <span class="recon-min">Ministerio de Ciencia, Tecnología e Innovación — República de Colombia</span>
+</div>
+</section>
+
+<!-- 10. STAT -->
+<section id="sec-stat" class="par-sec">
+<div class="par-layer"><div class="par-shape"></div><div class="par-shape"></div><div class="par-shape"></div></div>
+<div class="par-content">
+  <div class="par-num" id="par-num">65+</div>
+  <p class="par-txt">Proyectos de investigación activos<br/>transformando conocimiento en conservación</p>
+</div>
+</section>
+
+<!-- 11. SOCIAL -->
+<section id="sec-social" class="soc-sec">
 <div class="soc-box">
   <span class="badge badge-ghost">Comunidad Digital</span>
   <h2 class="h-light">SÍGUENOS EN REDES</h2>
   <p class="p-light">Conecta con nuestra comunidad científica y accede a contenido de investigación en tiempo real</p>
   <div class="soc-grid">
-    <a href="#" class="soc-link"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span class="soc-name">Facebook</span><span class="soc-handle">@IIAP.Colombia</span></a>
-    <a href="#" class="soc-link"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span class="soc-name">Instagram</span><span class="soc-handle">@iiap_pacifico</span></a>
-    <a href="#" class="soc-link"><svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg><span class="soc-name">YouTube</span><span class="soc-handle">IIAP Oficial</span></a>
-    <a href="#" class="soc-link"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.836L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="soc-name">X / Twitter</span><span class="soc-handle">@IIAP_oficial</span></a>
+    <a href="https://www.facebook.com/IIAPCO" class="soc-link"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg><span class="soc-name">Facebook</span><span class="soc-handle">@IIAP.Colombia</span></a>
+    <a href="https://www.instagram.com/iiap_col?igsh=NHc5MmxoNWwwb2lq" class="soc-link"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span class="soc-name">Instagram</span><span class="soc-handle">@iiap_pacifico</span></a>
+    <a href="https://www.youtube.com/channel/UCuxOL0BAHcc_AqXHTH4Vaiw" class="soc-link"><svg viewBox="0 0 24 24"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg><span class="soc-name">YouTube</span><span class="soc-handle">IIAP Oficial</span></a>
+    <a href="https://x.com/iiap_co" class="soc-link"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.736-8.836L1.254 2.25H8.08l4.259 5.63L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="soc-name">X / Twitter</span><span class="soc-handle">@IIAP_oficial</span></a>
+    <a href="https://co.linkedin.com/in/instituto-de-investigaciones-ambientales-del-pac%C3%ADfico-iiap-john-von-neumann-169883377" class="soc-link"><svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5ZM0 8h5V24H0V8ZM8 8h4.8v2.2h.07c.66-1.26 2.28-2.7 4.72-2.7 5.05 0 5.98 3.33 5.98 7.65V24h-5v-7.5c0-1.79-.03-4.09-2.5-4.09-2.5 0-2.88 1.95-2.88 3.96V24h-5V8Z"/></svg><span class="soc-name">LinkedIn</span><span class="soc-handle">IIAP Colombia</span></a>
+    <a href="https://www.tiktok.com/@iiapcolombia?_t=ZS-8vMfeQBmRLV&_r=1" class="soc-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="24" height="24"><path d="M448,209.91a210.06,210.06,0,0,1-122.77-39.25V349.38A162.55,162.55,0,1,1,185,188.31V278.2a74.62,74.62,0,1,0,52.23,71.18V0l88,0a121.18,121.18,0,0,0,1.86,22.17h0A122.18,122.18,0,0,0,381,102.39a121.43,121.43,0,0,0,67,20.14Z"/></svg><span class="soc-name">TikTok</span><span class="soc-handle">@iiap_pacifico</span></a>
+    <a href="https://open.spotify.com/user/31plbjolzlfec7pjx6qcqejxwsua?nd=1&dlsi=34ab1cd74caa459c" class="soc-link"><svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.1 17.04c-.18.28-.52.37-.8.2-2.2-1.34-4.96-1.64-8.2-.84-.33.08-.66-.13-.75-.47-.08-.33.12-.66.47-.75 3.52-.88 6.62-.53 9.08.99.28.18.37.52.2.84zm1.17-3.58c-.22.34-.64.46-.98.24-2.53-1.55-6.39-2.01-9.4-1.03-.37.13-.78-.06-.92-.43-.13-.37.06-.78.43-.92 3.32-1.17 7.62-.67 10.51 1.21.35.22.45.65.36.93zm.09-3.6c-.26.4-.8.53-1.2.27-2.9-1.72-7.34-2.22-10.8-1.13-.46.14-.96-.11-1.1-.58-.14-.47.11-.97.58-1.1 3.88-1.18 8.7-.63 11.9 1.3.42.25.55.82.62 1.14z"/></svg><span class="soc-name">Spotify</span><span class="soc-handle">IIAP Podcast</span></a>
   </div>
 </div>
 </section>
 
-<!-- 11. CTA -->
-<section class="cta-sec">
+<!-- 12. CTA -->
+<section id="sec-cta" class="cta-sec">
 <div class="cta-box">
   <h2 class="cta-h">ÚNETE A LA<br/>INVESTIGACIÓN</h2>
   <p class="cta-p">Sé parte del equipo que estudia y protege la biodiversidad más rica del planeta.</p>
@@ -651,7 +687,7 @@ body{font-family:'Crimson Text',serif;background:var(--bg);color:var(--text);ove
 const gdata={
   1:{num:'Grupo 01',title:'Investigación participativa con comunidades locales.',img:'assets/YDRAY-IMG_1099.jpeg',desc:'Este grupo desarrolla procesos de investigación de forma conjunta con comunidades afrocolombianas e indígenas del Chocó Biogeográfico. Su enfoque participativo garantiza que el conocimiento generado responda a las necesidades reales del territorio, integrando saberes ancestrales con metodología científica para fortalecer la gobernanza ambiental local.'},
   2:{num:'Grupo 02',title:'Restauración y manejo de hábitats.',img:'assets/SENDERO.jpeg',desc:'Enfocado en la recuperación ecológica de ecosistemas degradados del Pacífico colombiano, este grupo diseña e implementa estrategias de restauración de hábitats terrestres y acuáticos. Trabaja en la recuperación de corredores biológicos, la reintroducción de especies nativas y el monitoreo de la biodiversidad en áreas intervenidas.'},
-  3:{num:'Grupo 03',title:'Geo informática Aplicada al Medio Ambiente - GAMA',img:'assets/ESPACIOS_CENTRO.jpeg',desc:'GAMA integra herramientas de sistemas de información geográfica (SIG), teledetección y análisis de datos espaciales para el monitoreo y gestión del territorio pacífico colombiano. Sus investigaciones permiten modelar el cambio en la cobertura vegetal, identificar zonas de riesgo ambiental y generar insumos para la toma de decisiones en política pública.'},
+  3:{num:'Grupo 03',title:'Geo informática Aplicada al Medio Ambiente - GAMA',img:'assets/YDRAY-IMG_9766.jpeg',desc:'GAMA integra herramientas de sistemas de información geográfica (SIG), teledetección y análisis de datos espaciales para el monitoreo y gestión del territorio pacífico colombiano. Sus investigaciones permiten modelar el cambio en la cobertura vegetal, identificar zonas de riesgo ambiental y generar insumos para la toma de decisiones en política pública.'},
   4:{num:'Grupo 04',title:'COMUNIDADES ÉTNICAS Y SABERES DEL CHOCÓ BIOGEOGRÁFICO',img:'assets/VIVERO.jpeg',desc:'Este grupo investiga y salvaguarda el patrimonio cultural, los saberes tradicionales y los sistemas de conocimiento de las comunidades étnicas del Chocó Biogeográfico. Su trabajo abarca la documentación de prácticas ancestrales, la defensa de derechos territoriales y la articulación entre el conocimiento tradicional y la ciencia occidental para una gestión ambiental intercultural.'}
 };
 const gmOv=document.getElementById('gm-ov');
@@ -732,6 +768,29 @@ gsap.from('.tl-step',{...st('.tl-track'),x:-50,opacity:0,duration:.7,stagger:.15
 gsap.from('.cta-h',{...st('.cta-sec'),scale:1.15,opacity:0,duration:1.2,ease:'power4.out'});
 document.querySelectorAll('.tilt').forEach(c=>{c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;gsap.to(c,{rotateY:x*14,rotateX:-y*14,duration:.4,ease:'power2.out',transformPerspective:800});});c.addEventListener('mouseleave',()=>gsap.to(c,{rotateY:0,rotateX:0,duration:.6,ease:'power3.out'}));});
 document.querySelectorAll('.mag-btn').forEach(b=>{b.addEventListener('mousemove',e=>{const r=b.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)*.35,y=(e.clientY-r.top-r.height/2)*.35;gsap.to(b,{x,y,duration:.4,ease:'power2.out'});});b.addEventListener('mouseleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'elastic.out(1,.4)'}));});
+
+// SIDENAV
+(function(){
+  const items=document.querySelectorAll('.sn-item');
+  const secIds=Array.from(items).map(d=>d.dataset.target);
+  const sections=secIds.map(id=>document.getElementById(id)).filter(Boolean);
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        items.forEach(d=>d.classList.toggle('active',d.dataset.target===e.target.id));
+      }
+    });
+  },{threshold:0.35});
+  sections.forEach(s=>obs.observe(s));
+  items.forEach(d=>{
+    d.addEventListener('click',ev=>{
+      ev.preventDefault();
+      const t=document.getElementById(d.dataset.target);
+      if(t) t.scrollIntoView({behavior:'smooth',block:'start'});
+    });
+  });
+  gsap.from('#sidenav',{x:-60,opacity:0,duration:1,delay:.8,ease:'power3.out'});
+})();
 });
 </script>
 </body>
